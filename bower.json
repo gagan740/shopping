@@ -1,0 +1,11 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "ngDialog": "~0.6.4",
+    "ng-dialog": "~0.6.4"
+  }
+}
