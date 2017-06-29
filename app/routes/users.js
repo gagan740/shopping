@@ -5,7 +5,6 @@ var fs      =   require("fs");
 var path    =   require('path');
 var url     =   require('url');
 
-/* GET users listing. */
 router.post('/login', function(req, res, next) {
 	var db = req.con;
 	console.log("FormData "+ JSON.stringify(req.body));
