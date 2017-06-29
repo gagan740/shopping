@@ -1,19 +1,27 @@
-var app = angular.module('appRoutes', []);
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+(function(){
+    'use strict';
 
-        $routeProvider
-                .when('/', {
-                    templateUrl: 'views/dashboard.html',
-                    controller: 'MainController'
-                })
-                .when('/login', {
-                    templateUrl: 'views/login.html',
-                    controller: 'LoginController'
-                })
-                .when('/register', {
-                    templateUrl: 'views/register.html',
-                    controller: 'RegisterController'
-                })
+    angular
+        .module('appRoutes', ['ngRoute'])
+        .config(RouteConfig)
 
-        $locationProvider.html5Mode(false);
-    }]);
+    RouteConfig.$inject     =   ['$routeProvider','$locationProvider'];
+
+    function RouteConfig($routeProvider,$locationProvider){
+      $routeProvider
+              .when('/', {
+                  templateUrl: 'views/dashboard.html',
+                  controller: 'MainController'
+              })
+              .when('/login', {
+                  templateUrl: 'views/login.html',
+                  controller: 'LoginController'
+              })
+              .when('/register', {
+                  templateUrl: 'views/register.html',
+                  controller: 'RegisterController'
+              })
+
+      $locationProvider.html5Mode(false);
+    }
+})();
