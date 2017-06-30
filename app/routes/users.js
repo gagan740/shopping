@@ -18,18 +18,28 @@ router.post('/login', function(req, res, next) {
 	})
 });
 
-router.get('/tariffs', function(req, res, next) {
+router.post('/register', function(req, res, next) {
 	var db = req.con;
-	var data = "";
-	db.query('SELECT * FROM tariffs',function(err,rows){
-		if(err) throw err;
+	console.log("FormData "+ JSON.stringify(req.body));
+	db.collection('customers').insert(req.body,function(err,docs){
+		console.info(docs);
+		if(docs){
+			res.send("Success.");
+		}else{
+			res.send("Something went wrong please try again later.")
+		}
+	})
+});
 
-		console.log('Data received from Db:\n');
-		console.log(rows);
-		var data = rows;
-		console.log("Outside--"+data.id);
-		//res.render('userIndex', { title: 'User Information', dataGet: data });
-		res.send(data);
+router.get('/calls', function(req, res, next) {
+	var db = req.con;
+	db.collection('calls').find({},{ limit : 100000 },function(err,docs){
+		console.log(docs);
+		if(docs){
+			res.send(docs);
+		}else{
+			res.send("Something went wrong please try again later.")
+		}
 	});
 });
 
