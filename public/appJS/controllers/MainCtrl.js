@@ -5,9 +5,9 @@
         .module('MainCtrl', [])
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$rootScope', '$scope', '$window', '$location', '$window'];
+    MainController.$inject = ['$scope'];
 
-    function MainController($rootScope, $scope, $window, $location, $window) {
+    function MainController($scope) {
 
     }
 })();

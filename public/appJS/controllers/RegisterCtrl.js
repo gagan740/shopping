@@ -9,5 +9,5 @@
 
     function RegisterController($rootScope, $scope, $location) {
 
-    };
+    }
 })();
