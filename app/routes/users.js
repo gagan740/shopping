@@ -5,6 +5,18 @@ var fs      =   require("fs");
 var path    =   require('path');
 var url     =   require('url');
 
+//mongodb Queries
+// db.customers.find( { password: { $in: [ '111111', '101010' ] } } )    for in
+// db.customers.find( { password: { $nin: [ '111111', '101010' ] } } )   for not in
+// db.collection('customers').find({})																	 for find (select)
+// db.collection('customers').insert()																	 for insert
+// db.customers.update({_id : ObjectId("595603e1b6540b280535e0bc")},{$set:{name : "testing","phone" : "7894561235",username: "test@testmail.com",password : "111111"}} )			 for update
+// db.customers.remove( { "_id" : ObjectId("5956071ecfe055345d6ea853") } ) for remove(Delete)
+
+
+
+
+
 router.post('/login', function(req, res, next) {
 	var db = req.con;
 	console.log("FormData "+ JSON.stringify(req.body));
