@@ -16,7 +16,6 @@ var url     =   require('url');
 
 
 
-
 router.post('/login', function(req, res, next) {
 	var db = req.con;
 	console.log("FormData "+ JSON.stringify(req.body));
