@@ -12,7 +12,8 @@ var url     =   require('url');
 // db.collection('customers').insert()																	 for insert
 // db.customers.update({_id : ObjectId("595603e1b6540b280535e0bc")},{$set:{name : "testing","phone" : "7894561235",username: "test@testmail.com",password : "111111"}} )			 for update
 // db.customers.remove( { "_id" : ObjectId("5956071ecfe055345d6ea853") } ) for remove(Delete)
-
+// db.calls.find({"tariff" : /.*U.*/})			for like
+//db.calls.find({"tariff" : /U/})						for like
 
 
 
